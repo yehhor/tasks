@@ -1,1 +1,20 @@
-<a routerLink="/main"> get back</a>
+<div>
+
+    <form (submit)="submit()" #form class="profile-form" novalidate>
+
+        <mat-form-field>
+            <input matInput name="name" placeholder="Name" [(ngModel)]="user.name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select [(value)]="user.role" placeholder="Select Role">
+                <mat-option *ngFor="let role of roles" [value]="role.id">
+                    {{ role.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <button mat-button> Submit</button>
+
+    </form>
+</div>

@@ -6,20 +6,22 @@ import data from "../data/tasks"
 import {Task} from "../models/Task";
 import {STATUSES} from "../models/STATUSES";
 import {CardComponent} from "./card/card.component";
+import {DataService} from "../data.service";
 
 @Component({
     selector: 'board-component',
-    templateUrl: './board.component.html'
+    templateUrl: './board.component.html',
+    providers: [DataService]
 })
 export class BoardComponent {
     @ViewChildren(CardComponent) cardItems: CardComponent[];
-    cards: Task[] = data;
+    cards: Task[] = this.dataService.tasks;
     newCards: Task[] = [];
     progressCards: Task[] = [];
     inQaCards: Task[] = [];
     finishedCards: Task[] = [];
 
-    constructor() {
+    constructor(private dataService: DataService) {
         this.sortItems();
     }
 
