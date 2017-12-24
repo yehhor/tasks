@@ -1,0 +1,25 @@
+<div class="wrapper"
+     [ngClass]="{'selected' : isSelected}"
+     (click)="onClick()">
+    <div [ngClass]="{'selected' : isSelected}" class="selected-icon">
+    </div>
+
+
+    <div class="head">
+        <span>{{item.name}}</span>
+        <button mat-raised-button color="accent" (click)="openDialog()">Open dialog</button>
+    </div>
+
+    <div class="description">
+        <div class="title">Description:</div>
+        <div class="text">
+            {{item.description}}
+        </div>
+    </div>
+    <div class="footer">
+        <div class="due-date">
+            Due date: {{item.dueDate | date}}
+        </div>
+        <div class="owner">{{item.owner.name}}</div>
+    </div>
+</div>

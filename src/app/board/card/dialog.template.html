@@ -1,0 +1,23 @@
+
+
+<ol>
+    <li>
+        <mat-form-field>
+            <input matInput [(ngModel)]="item.name" placeholder="name">
+        </mat-form-field>
+    </li>
+    <li>
+        <mat-form-field>
+            <input matInput [(ngModel)]="item.description" placeholder="name">
+        </mat-form-field>
+    </li>
+    <li>
+        <mat-form-field>
+            <input matInput readonly [(ngModel)]="item.creator.name" placeholder="name">
+        </mat-form-field>
+    </li>
+    <li>
+        <button mat-raised-button (click)="save()">Change one</button>
+    </li>
+
+</ol>

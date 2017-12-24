@@ -1,0 +1,30 @@
+<div class="btn-group">
+    <button (click)="moveToNew()"
+            class="btn btn-primary">Move to New
+    </button>
+
+    <button (click)="moveToProgress()"
+            class="btn btn-primary">Move to Progress
+    </button>
+    <button (click)="moveToQA()" class="btn btn-primary">Move selected items to QA</button>
+</div>
+<div class="headings flex">
+    <div class="column">NEW CARDs</div>
+    <div class="column">IN PROGRESS</div>
+    <div class="column">In QA</div>
+    <div class="column">FINISHED</div>
+</div>
+<div class="body flex">
+    <div class="column">
+        <card *ngFor="let card of newCards" [item]="card"></card>
+    </div>
+    <div class="column">
+        <card *ngFor="let card of progressCards" [item]="card"></card>
+    </div>
+    <div class="column">
+        <card *ngFor="let card of inQaCards" [item]="card"></card>
+    </div>
+    <div class="column">
+        <card *ngFor="let card of finishedCards" [item]="card"></card>
+    </div>
+</div>
